@@ -1,0 +1,30 @@
+Http is stateless protocol
+
+
+HttpSession is a predefined interface
+getSession() is a predefined method which we are using to get session object from web conatiner
+
+Role of session object - to store information from different pages request by a user 
+HttpSession session=request.getSession(true);//create a new object and store its reference in session object
+
+
+
+			out.println("session id="+session.getId());//id is provided by Conatiner
+			
+			
+			session.setAttribute("username", uname);
+			
+			Log out
+			session.invalidate()
+			
+**********************************************************************************			
+			
+			
+			RequestDispatcher rd; // its an interface which helps to pass data and control from 1 page to another
+			
+			rd=request.getRequestDispatcher("Welcome");
+			rd.forward(request, response);
+			
+			
+			rd=request.getRequestDispatcher("LoginForm.html");
+			rd.include(request, response);
