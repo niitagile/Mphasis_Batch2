@@ -21,12 +21,10 @@ public class EmployeeController {
 	
 	
 	@RequestMapping("/viewemp")
-	public String viewemp(Model m){
+	public String viewemp(Model model){
 		List<Employee> empList= dao.getEmployeesDetails();
-		/*for(Employee e : empList){
-			System.out.println(e.getEid());
-		}*/
-		m.addAttribute("empList",empList);
+		
+		model.addAttribute("empList",empList);
 		return "viewemp";
 	}
 	

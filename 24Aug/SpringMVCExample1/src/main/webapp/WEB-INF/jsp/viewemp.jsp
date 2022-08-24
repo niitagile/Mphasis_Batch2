@@ -9,22 +9,24 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
 <table border="2">
 <tr>
-<th>Id</th>
-<th>Name</th>  
-<th>Designation</th>
-<th>Salary</th>
+	<th>Id</th>
+	<th>Name</th>  
+	<th>Designation</th>
+	<th>Salary</th>
 </tr>
+
 <c:forEach var="emp" items="${empList}">
-<tr>
-<td>${emp.eid}</td>
-<td>${emp.name}</td>
-<td>${emp.designation}</td>
-<td>${emp.salary}</td>
-<td><a href="editemp/${emp.eid}">Edit</a></td>
-<td><a href="deleteemp/${emp.eid}">Delete</a></td>
-</tr>
+	<tr>
+		<td>${emp.eid}</td>
+		<td>${emp.name}</td>
+		<td>${emp.designation}</td>
+		<td>${emp.salary}</td>
+	
+	</tr>
 </c:forEach>
 </table>
 </body>
