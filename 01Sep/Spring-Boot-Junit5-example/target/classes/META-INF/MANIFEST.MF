@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Corporate
+Build-Jdk: 11.0.10
+Implementation-Title: Spring-Boot-Junit5-example
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.javabydeveloper
+Implementation-URL: https://javabydeveloper.com/junit-5-tutorial/
+Created-By: Maven Integration for Eclipse
+
