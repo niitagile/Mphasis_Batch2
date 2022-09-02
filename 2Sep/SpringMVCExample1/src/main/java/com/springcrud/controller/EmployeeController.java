@@ -21,12 +21,11 @@ public class EmployeeController {
 	
 	
 	//show all records
-	@RequestMapping(value="/viewemp", method=RequestMethod.GET)
-	@ResponseBody
-	public String viewemp(Model model){
+	@RequestMapping("/viewemp")
+	public String viewemp(Model m){
 		List<Employee> empList= dao.getEmployeesDetails();
 		
-		model.addAttribute("empList",empList);
+		m.addAttribute("empList",empList);
 		return "viewemp";
 	}
 	
@@ -47,4 +46,28 @@ public class EmployeeController {
 	return "redirect:/viewemp";
 	}
 	
+	//delete mapping
+	@RequestMapping(value="/deleteemp/{eid}", method=RequestMethod.GET)
+	public String deleterecord(@PathVariable("eid") int eid){
+		dao.delete(eid);
+		return "redirect:/viewemp";
+	}	
+	
+	// Search a record for editing and throw all information on editform
+	@RequestMapping(value="/editemp/{eid}", method=RequestMethod.GET)
+	public String editrecord(@PathVariable int eid, Model m){
+		
+		Employee emp=dao.getEmpId(eid);
+		m.addAttribute("emp",emp);
+		return "empeditform";
+	}
+	
+	//save changes
+	@RequestMapping(value="/editsave",method=RequestMethod.POST)
+	public String editSave(@ModelAttribute("emp") Employee emp){
+		
+		
+		dao.update(emp);
+		return "redirect:/viewemp";
+	}
 }

@@ -25,7 +25,8 @@
 		<td>${emp.name}</td>
 		<td>${emp.designation}</td>
 		<td>${emp.salary}</td>
-	
+		<td><a href="editemp/${emp.eid}">Edit</a></td>
+		<td><a href="deleteemp/${emp.eid}">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>
