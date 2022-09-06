@@ -1,0 +1,45 @@
+Tables
+- User (userdetails)
+- Login (logindetails)
+- Questions
+-Quiz
+- User_QuestionAnswers
+-QuizQuestion (Relationship) Quizid- questionid
+
+
+ADMINDASHBOARD - SpringBoot Project
+
+-exceptionhandler
+-controller
+-entity ---->Login, Question, Quiz, QuizQuestion, User
+-repository--> Login, Question, Quiz, QuizQuestion, User
+-service
+-- QuestionService
+--QuizQuestionService
+--QuizService
+--UserService
+
+- DTO
+-- QuestionDTO, QuestionRequestDTO, 
+--QuizQuestionRequest
+--QuizRequest
+--Response
+--UpdateQuestionRequest
+--UpdateQuizRequest
+--UpdateUserDTo
+	
+
+AuthenticationService
+-entity--> user, login
+-repository--> crud operation user, login (interface)
+-service --> call repository in service
+-controller --> /user, /login
+- exceptionhandler
+
+
+
+UserService
+-entity -- user, login,quiz, question, quizquestion, quizquestionanswer
+-repository-- user crud, login - check for credentials, quiz- select, question- select , quizquestion- select , quizquestionanswer-> send the answers(insert)
+-service
+-controller
