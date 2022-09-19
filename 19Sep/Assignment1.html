@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        My Html Page
+        <script>
+          function display(){
+            var num=document.getElementById("txtval").value;
+               var multiple="";
+               for(i=1;i<=5;i++){
+                multiple=multiple+(num*i)+"<br>";
+               } 
+               document.getElementById("ans").innerHTML=multiple;
+          }
+
+        </script>
+ <input type="text" id="txtval">
+ <button onclick="display()">Submit</button>
+ <p id="ans"></p>
+</body>
+</html>    
