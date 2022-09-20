@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <script>
+            let person = {
+            name: 'John Doe',
+            getName: function() {
+                console.log("hello");
+                console.log(this.name);
+             }
+        };
+
+       // setTimeout(person.getName, 1000);//settimeout loose object value because its getting its value separately
+        let f = person.getName.bind(person);
+        setTimeout(f, 1000);
+        
+        </script>
+    </body>
+</html>
