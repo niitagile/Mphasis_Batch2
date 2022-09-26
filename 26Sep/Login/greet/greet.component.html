@@ -1,0 +1,8 @@
+<p class="class1">greet works!</p>
+<h1> Login Form</h1>
+<input type="text" [(ngModel)]="username">
+<input type="password" [(ngModel)]="password">
+<button (click)="validate()">Validate</button>
+{{msg}}
+<h1 [style.color]="status=='error' ? 'red': 'blue'">{{msg}}</h1> 
+<div class="cssStringVar">{{msg}}</div>
