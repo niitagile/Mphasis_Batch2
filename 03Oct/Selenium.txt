@@ -1,0 +1,59 @@
+Selenium is an open-source, automated testing tool used to test web applications across various browsers
+
+Why it is easy to use
+1) can be integrated with any testing framework
+2) platform independent (works with any os)
+3) written in javascript. so easy to implement
+4) integrate with any ide
+5 ) can be used with any browser
+6) its provide its own ide
+
+		Selenium Suite
+Selenium IDE
+
+Selenium WEb Driver
+Selenium grid
+
+IDE records user interactions on the browser and exports them as a reusable script. 
+IDE was developed to speed up the creation of automation scripts. 
+It’s a rapid prototyping tool and can be used by engineers with no programming knowledge
+IDE works in three stages: recording, playing back and saving. 
+
+
+Selenium RC
+a tool called Selenium-Core was built. It was a set of JavaScript functions that interpreted and executed Selenese commands using the browser's built-in JavaScript interpreter. Selenium-Core was then injected into the web browser. 
+
+
+The server acts as a client configured HTTP proxy and "tricks" the browser into believing that Selenium Core and the web application being tested come from the same origin. 
+
+The RC server accepts commands from the user program and passes them to the browser as Selenium-Core JavaScript commands.
+
+Selenium WEb Driver
+JSON Wire Protocol - JSON Wire Protocol provides a transport mechanism to transfer data between a server and a client. JSON Wire Protocol serves as an industry standard for various web services.
+
+Selenium WebDriver was the first cross-platform testing framework that could configure and control the browsers on the OS level. It served as a programming interface to create and run test cases. 
+
+
+Selenium Grid
+ a grid with the primary objective of minimizing the test execution time. This was facilitated by distributing the test commands to different machines simultaneously. Selenium Grid allows the parallel execution of tests on different browsers and different operating systems.
+ 
+
+
+				Selenium Commands
+Selenium commands are broadly classified into: 
+
+1. Actions - Commands that interact directly with the application: 
+
+clickAndWait(),
+
+typeAndWait()
+
+2. Enable the user to store certain values to a user-defined variable:
+
+storeTitle()
+
+3. Assertions - Verifies the current state of the application along with an expected state. There are different types of assertions: 
+
+Assert command makes sure that the test execution is terminated in case of failure
+Verify command ensures script execution even if the verification has failed
+WaitFor command waits for a specific condition to be met before executing the next test step
