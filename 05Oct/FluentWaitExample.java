@@ -44,15 +44,23 @@ public class FluentWaitExample {
 			@Override
 			public WebElement apply(WebDriver t) {
 				
-				WebElement element = driver.findElement(By.xpath("//*[@id='softwareTestingMaterial']"));
-				String getTextOnPage = element.getText();
+				//WebElement element = driver.findElement(By.xpath("//*[@id='softwareTestingMaterial']"));
+				/*String getTextOnPage = element.getText();
 				if (getTextOnPage.equals("Software Testing Material - DEMO PAGE")) {
 					System.out.println(getTextOnPage);
 					return element;
 				} else {
 					System.out.println("FluentWait Failed");
 					return null;
+				}*/
+				
+				WebElement element = driver.findElement(By.xpath("//*[@id='demo']"));
+				if(element==null) {
+					System.out.println("Element not found");
+					return null;
 				}
+				else
+					return element;
 				
 				
 			}
@@ -61,5 +69,16 @@ public class FluentWaitExample {
 			
 			
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
