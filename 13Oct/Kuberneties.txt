@@ -1,0 +1,33 @@
+1)Configuring Kubernetes
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" >/etc/apt/sources.list.d/kubernetes.list
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+
+2) Initialize Kubernetes to deploy containers using Kubernetes CLI.
+kubeadm init
+
+3)Once Kubernetes is initialized, configure Kubernetes to start using the Kubernetes cluster.
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+4)After the cluster gets started, deploy a weave network to the cluster.
+export kubever=$(kubectl version | base64 | tr -d '\n')
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+
+5)With weave network deployment, validate that the node is up and running. That will help to deploy a Docker container to the Kubernetes cluster.
+kubectl get node
+kubectl get pods --all-namespaces
+
+
+sudo yum update -y
+sudo yum -y install docker
+sudo service docker start
+
+sudo usermod -a -G docker ec2-user
+sudo chmod 666 /var/run/docker.sock
+docker version
+
+
+docker swarm join --token SWMTKN-1-4ufowp2vq4678eh57s1n4xs80rbwar3fnr92lv6s6f8541f8cf-3zlkoihjc7f4u15rtejjqh3d7 172.31.81.250:2377
